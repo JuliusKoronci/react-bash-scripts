@@ -6,9 +6,7 @@
     "gitCommit": "git add . && git commit -m'auto commit npm publish/version update script' --allow-empty",
     "gitPush": "git push",
     "minorVersion": "npm version patch",
-    "build": "npm run gitCommit &&  npm run minorVersion",
-    "prepublish": "npm run build",
-    "postpublish": "npm run gitPush"
+    "build": "npm run gitCommit &&  npm run minorVersion"
   },
   "keywords": [
     "API",
