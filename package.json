@@ -1,6 +1,6 @@
 {
   "name": "react-bash-helpers",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Some scripts to generate comon react module structure with stndard files, e.g. actions, reducers, constants...",
   "scripts": {
     "gitCommit": "git add . && git commit -m'auto commit npm publish/version update script' --allow-empty",
