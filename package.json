@@ -1,0 +1,15 @@
+{
+  "name": "react-bash-helpers",
+  "version": "0.0.1",
+  "description": "Some scripts to generate comon react module structure with stndard files, e.g. actions, reducers, constants...",
+  "keywords": [
+    "API",
+    "Fetch",
+    "Fake API",
+    "Mock ES6 Fetch",
+    "Dummy data AJAX",
+    "ReactJs"
+  ],
+  "author": "Julius Koronci <jk@web-solutions.sk>",
+  "license": "MIT"
+}
