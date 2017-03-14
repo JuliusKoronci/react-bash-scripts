@@ -109,9 +109,9 @@ const _request = {
 };
 
 const ${moduleNameLower}Reducer = {
-	[${ModuleName}Actions.${moduleNameUpper}_REQUEST]          : _request,
-	[${ModuleName}Actions.${moduleNameUpper}_SUCCESS]          : _success,
-	[${ModuleName}Actions.${moduleNameUpper}_ERROR]            : _error,
+	[${moduleNameLower}Actions.${moduleNameUpper}_REQUEST]          : _request,
+	[${moduleNameLower}Actions.${moduleNameUpper}_SUCCESS]          : _success,
+	[${moduleNameLower}Actions.${moduleNameUpper}_ERROR]            : _error,
 };
 
 export default handleActions(${moduleNameLower}Reducer, {
