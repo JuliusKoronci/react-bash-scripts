@@ -1,8 +1,10 @@
 # Bash scripts to generate React boilerplate's
 
 Currently there is only one script module.sh -- you can either use it directly or set up in the scripts section e.g. 
-something like module:create
-
+something like
+```
+"create:module": "sh node_modules/react-bash-helpers/module.sh"
+```
 Generated folder structure.
 
 ```
