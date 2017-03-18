@@ -1,7 +1,7 @@
 {
-  "name": "react-bash-helpers",
+  "name": "react-generator",
   "version": "0.0.8",
-  "description": "Some scripts to generate comon react module structure with stndard files, e.g. actions, reducers, constants...",
+  "description": "Crossplatform Node CLI to generate and automate common tasks in react. Support module generateion, components, containers, reducers, test. Easily configurable to your own needs.",
   "repository": "https://github.com/JuliusKoronci/react-bash-scripts",
   "main": "./build/index.js",
   "scripts": {
@@ -9,14 +9,13 @@
     "gitPush": "git push",
     "babelCompile": "babel src --out-dir build --source-maps",
     "minorVersion": "npm version patch",
+    "test": "jest",
+    "flow": "flow",
     "build": "npm run gitCommit &&  npm run minorVersion"
   },
   "keywords": [
-    "API",
-    "Fetch",
-    "Fake API",
-    "Mock ES6 Fetch",
-    "Dummy data AJAX",
+    "Code Generator",
+    "Node CLI",
     "ReactJs"
   ],
   "author": "Julius Koronci <jk@web-solutions.sk>",
@@ -34,12 +33,21 @@
     "figlet": "^1.2.0",
     "flow-bin": "^0.39.0",
     "fs": "^0.0.1-security",
+    "jest": "^19.0.2",
     "keymirror": "^0.1.1",
     "ramda": "0.23.x",
-    "shelljs": "^0.7.7"
+    "react": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "redux-actions": "^2.0.1",
+    "shelljs": "^0.7.7",
+    "updeep": "^1.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-jest": "^19.0.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-polyfill": "^6.23.0"
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-react": "^6.23.0",
+    "regenerator-runtime": "^0.10.3"
   }
 }

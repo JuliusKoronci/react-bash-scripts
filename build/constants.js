@@ -6,7 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	types: {
 		MODULE: 'module',
-		COMPONENT: 'component'
+		COMPONENT: 'component',
+		ATOM: 'atom',
+		MOLECULE: 'molecule',
+		ORGANISM: 'organism',
+		DUMB: 'dumb',
+		ROUTE: 'route',
+		PATH: 'path'
 	}
 };
 //# sourceMappingURL=constants.js.map

@@ -21,6 +21,10 @@ var _figlet = require('figlet');
 
 var _figlet2 = _interopRequireDefault(_figlet);
 
+var _shelljs = require('shelljs');
+
+var _shelljs2 = _interopRequireDefault(_shelljs);
+
 var _createModule = require('./module/createModule');
 
 var _createModule2 = _interopRequireDefault(_createModule);
@@ -28,6 +32,10 @@ var _createModule2 = _interopRequireDefault(_createModule);
 var _createComponent = require('./component/createComponent');
 
 var _createComponent2 = _interopRequireDefault(_createComponent);
+
+var _createRoute = require('./route/createRoute');
+
+var _createRoute2 = _interopRequireDefault(_createRoute);
 
 var _constants = require('./constants');
 
@@ -40,83 +48,61 @@ require("babel-polyfill");
 // local libs
 
 
-var types = [_constants2.default.types.MODULE, _constants2.default.types.COMPONENT];
+var types = [_constants2.default.types.MODULE, _constants2.default.types.COMPONENT, _constants2.default.types.ATOM, _constants2.default.types.MOLECULE, _constants2.default.types.ORGANISM, _constants2.default.types.DUMB, _constants2.default.types.ROUTE, _constants2.default.types.PATH];
 console.log(_chalk2.default.green(_figlet2.default.textSync('ReactJS CLI')));
 
-var create = function create(args) {
-	console.log(args);
-};
+var pjson = require('../package.json');
 
-_commander2.default.version('0.0.1').usage('<types>').option('-t, --type [type]', 'Type of generated structure [module|component]').option('-n, --moduleName [moduleName]', 'Name of generated structure [module|component]').option('-p, --path [path]', 'Path for the generated structure [module|component]').parse(process.argv);
+_commander2.default.version(pjson.version).usage('with or without arguments :)').option('-l, --module    [module]', 'name of your Module').option('-c, --component [component]', 'name of your Component').option('-a, --atom      [atom]', 'name of your Atom').option('-m, --molecule  [molecule]', 'name of your Molecule').option('-o, --organism  [organism]', 'name of your Organism').option('-d, --dumb  [organism]', 'name of your dumb component').option('-r, --route     [route]', 'url of your route').option('-p, --path      [path]', 'path for the generated structure [module|component]').parse(process.argv);
 
 var parseValues = (0, _co2.default)(regeneratorRuntime.mark(function _callee() {
-	var moduleName, type, path;
+	var config, counter;
 	return regeneratorRuntime.wrap(function _callee$(_context) {
 		while (1) {
 			switch (_context.prev = _context.next) {
 				case 0:
-					moduleName = _commander2.default.moduleName;
-					type = _commander2.default.type;
-					path = _commander2.default.path;
+					config = {};
+					counter = 0;
 
-					if (type) {
-						_context.next = 7;
+
+					types.forEach(function (type) {
+						config[type] = _commander2.default[type];
+						if (!_commander2.default[type]) {
+							counter++;
+						}
+					});
+
+					if (!(counter === types.length || counter === types.length - 1 && config[_constants2.default.types.PATH])) {
+						_context.next = 12;
 						break;
 					}
 
 					_context.next = 6;
-					return (0, _coPrompt2.default)('Type ' + _constants2.default.types.MODULE + '|' + _constants2.default.types.COMPONENT + ' [module]: ');
+					return (0, _coPrompt2.default)('Enter the name of ' + _constants2.default.types.MODULE + ' *: ');
 
 				case 6:
-					type = _context.sent;
+					config[_constants2.default.types.MODULE] = _context.sent;
 
-				case 7:
-					if (!type) {
-						type = 'module';
-					}
-					if (!types.includes(type)) {
-						console.log(_chalk2.default.bold.red('Type: ' + type + ' is not supported'));
-						process.exit(0);
-					}
-
-					if (moduleName) {
-						_context.next = 14;
-						break;
-					}
-
-					_context.next = 12;
-					return (0, _coPrompt2.default)('Enter the name of ' + type + ' *: ');
-
-				case 12:
-					moduleName = _context.sent;
-
-					if (!moduleName) {
+					if (!config[_constants2.default.types.MODULE] || '' === config[_constants2.default.types.MODULE]) {
 						console.log(_chalk2.default.bold.red('The name is required'));
 						process.exit(0);
 					}
 
-				case 14:
-					if (path) {
-						_context.next = 18;
+					if (config[_constants2.default.types.PATH]) {
+						_context.next = 12;
 						break;
 					}
 
-					_context.next = 17;
+					_context.next = 11;
 					return (0, _coPrompt2.default)('Optional path, we recommend to leave blank(will default to /src/[modules|components]):');
 
-				case 17:
-					path = _context.sent;
+				case 11:
+					config[_constants2.default.types.PATH] = _context.sent;
 
-				case 18:
-					console.log(_chalk2.default.bold.cyan('A new ' + type + ' is going to be created'));
+				case 12:
+					return _context.abrupt('return', config);
 
-					return _context.abrupt('return', {
-						type: type,
-						moduleName: moduleName,
-						path: path
-					});
-
-				case 20:
+				case 13:
 				case 'end':
 					return _context.stop();
 			}
@@ -135,19 +121,28 @@ parseValues.then(function (values) {
 });
 
 var handleValues = function handleValues(_ref) {
-	var type = _ref.type,
+	var component = _ref.component,
 	    path = _ref.path,
-	    moduleName = _ref.moduleName;
+	    module = _ref.module,
+	    atom = _ref.atom,
+	    molecule = _ref.molecule,
+	    organism = _ref.organism,
+	    dumb = _ref.dumb,
+	    route = _ref.route;
 
-	switch (type) {
-		case _constants2.default.types.MODULE:
-			(0, _createModule2.default)(moduleName, path);
-			break;
-		case _constants2.default.types.COMPONENT:
-			(0, _createComponent2.default)(moduleName, path);
-			break;
-		default:
+
+	module && (0, _createModule2.default)(module, path);
+	component && (0, _createComponent2.default)(component, path);
+	dumb && (0, _createComponent2.default)(dumb, path, undefined, true);
+	molecule && (0, _createComponent2.default)(molecule, path, 'molecules');
+	atom && (0, _createComponent2.default)(atom, path, 'atoms');
+	organism && (0, _createComponent2.default)(organism, path, 'organisms');
+	route && (0, _createRoute2.default)(route);
+
+	if (_shelljs2.default.exec('npm run test').code !== 0) {
+		_shelljs2.default.echo('Can not run tests. Please run tests manually!');
 	}
+
 	console.log(_chalk2.default.bold.green('Get a cofee and enjoy the time you saved :)!'));
 	process.exit(0);
 };

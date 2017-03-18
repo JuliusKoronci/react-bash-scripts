@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/route/createRoute.js"],"names":["route"],"mappings":";;;;;;kBAAe,UAAUA,KAAV,EAAiB,CAE/B,C","file":"createRoute.js","sourcesContent":["export default function (route) {\n\n}\n"]}

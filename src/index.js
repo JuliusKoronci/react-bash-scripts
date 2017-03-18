@@ -7,63 +7,69 @@ import co from 'co';
 import prompt from 'co-prompt';
 import chalk from 'chalk';
 import figlet from 'figlet';
+import shell from 'shelljs';
 
 // local libs
 import createModule from './module/createModule';
 import createComponent from './component/createComponent';
+import createRoute from './route/createRoute';
 import constants from './constants';
 
-const types = [constants.types.MODULE, constants.types.COMPONENT];
+const types = [
+	constants.types.MODULE,
+	constants.types.COMPONENT,
+	constants.types.ATOM,
+	constants.types.MOLECULE,
+	constants.types.ORGANISM,
+	constants.types.DUMB,
+	constants.types.ROUTE,
+	constants.types.PATH,
+];
 console.log(
 	chalk.green(
 		figlet.textSync('ReactJS CLI')
 	)
 );
 
-const create = (args) => {
-	console.log(args);
-};
+const pjson = require('../package.json');
 
 program
-	.version('0.0.1')
-	.usage('<types>')
-	.option('-t, --type [type]', 'Type of generated structure [module|component]')
-	.option('-n, --moduleName [moduleName]', 'Name of generated structure [module|component]')
-	.option('-p, --path [path]', 'Path for the generated structure [module|component]')
+	.version(pjson.version)
+	.usage('with or without arguments :)')
+	.option('-l, --module    [module]', 'name of your Module')
+	.option('-c, --component [component]', 'name of your Component')
+	.option('-a, --atom      [atom]', 'name of your Atom')
+	.option('-m, --molecule  [molecule]', 'name of your Molecule')
+	.option('-o, --organism  [organism]', 'name of your Organism')
+	.option('-d, --dumb  [organism]', 'name of your dumb component')
+	.option('-r, --route     [route]', 'url of your route')
+	.option('-p, --path      [path]', 'path for the generated structure [module|component]')
 	.parse(process.argv);
 
 
 const parseValues = co(function *() {
-	let moduleName: string = program.moduleName;
-	let type: string = program.type;
-	let path: string = program.path;
-	if (!type) {
-		type = yield prompt(`Type ${constants.types.MODULE}|${constants.types.COMPONENT} [module]: `);
-	}
-	if (!type) {
-		type = 'module';
-	}
-	if (!types.includes(type)) {
-		console.log(chalk.bold.red(`Type: ${type} is not supported`));
-		process.exit(0);
-	}
-	if (!moduleName) {
-		moduleName = yield prompt(`Enter the name of ${type} *: `);
-		if (!moduleName) {
+	const config = {};
+	let counter = 0;
+
+	types.forEach((type) => {
+		config[type] = program[type];
+		if (!program[type]) {
+			counter++;
+		}
+	});
+
+	if (counter === types.length || (counter === types.length - 1 && config[constants.types.PATH])) {
+		// if no arguments or only path provided run prompts
+		config[constants.types.MODULE] = yield prompt(`Enter the name of ${constants.types.MODULE} *: `);
+		if (!config[constants.types.MODULE] || '' === config[constants.types.MODULE]) {
 			console.log(chalk.bold.red(`The name is required`));
 			process.exit(0);
 		}
+		if (!config[constants.types.PATH]) {
+			config[constants.types.PATH] = yield prompt(`Optional path, we recommend to leave blank(will default to /src/[modules|components]):`);
+		}
 	}
-	if (!path) {
-		path = yield prompt(`Optional path, we recommend to leave blank(will default to /src/[modules|components]):`);
-	}
-	console.log(chalk.bold.cyan(`A new ${type} is going to be created`));
-
-	return {
-		type,
-		moduleName,
-		path
-	};
+	return config;
 }).catch((error) => {
 	console.log(chalk.bold.red(error.message));
 	process.exit(0);
@@ -75,16 +81,20 @@ parseValues.then((values) => handleValues(values))
 		process.exit(0);
 	});
 
-const handleValues = ({ type, path, moduleName }) => {
-	switch (type) {
-		case constants.types.MODULE:
-			createModule(moduleName, path);
-			break;
-		case constants.types.COMPONENT:
-			createComponent(moduleName, path);
-			break;
-		default:
+const handleValues = ({ component, path, module, atom, molecule, organism, dumb, route }) => {
+
+	module && createModule(module, path);
+	component && createComponent(component, path);
+	dumb && createComponent(dumb, path, undefined, true);
+	molecule && createComponent(molecule, path, 'molecules');
+	atom && createComponent(atom, path, 'atoms');
+	organism && createComponent(organism, path, 'organisms');
+	route && createRoute(route);
+
+	if (shell.exec('npm run test').code !== 0) {
+		shell.echo('Can not run tests. Please run tests manually!');
 	}
+
 	console.log(chalk.bold.green('Get a cofee and enjoy the time you saved :)!'));
 	process.exit(0);
 };

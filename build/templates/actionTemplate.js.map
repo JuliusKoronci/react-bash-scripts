@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/templates/actionTemplate.js"],"names":["getTemplate","name"],"mappings":";;;;;AAAA,IAAMA,cAAc,SAAdA,WAAc,CAACC,IAAD,EAAU;AAC7B;AAKA,CAND;;kBAQeD,W","file":"actionTemplate.js","sourcesContent":["const getTemplate = (name) => {\n\treturn (`// @flow\nimport { createAction } from 'redux-actions';\n\n`\n\t);\n};\n\nexport default getTemplate;\n"]}

@@ -1,15 +1,20 @@
 import shell from 'shelljs';
-import indexTemplate from '../templates/index';
+import indexTemplate from '../templates/indexModule';
+import actionTemplate from '../templates/actionTemplate';
+import constantsTemplate from '../templates/constantsTemplate';
+import reducerTemplate from '../templates/reducerTemplate';
+import containerTemplate from '../templates/containerTemplate';
 import createFile from '../utils/createFile';
 
 const dirs = [
 	'/components',
 	'/constants',
 	'/containers',
+	'/containers/__tests__',
 	'/reducers',
-	'/reducers/__test__',
+	'/reducers/__tests__',
 	'/actions',
-	'/actions/__test__',
+	'/actions/__tests__',
 	'/selectors',
 ];
 
@@ -17,12 +22,17 @@ const handle = (moduleName, path) => {
 	if (!path || '' === path) {
 		path = 'src/modules';
 	}
+	path += `/${moduleName}`;
 	dirs.forEach((directory) => {
 		console.log(`Creating ${path}${directory}`);
 		shell.mkdir('-p', `${path}${directory}`);
 	});
 
 	createFile(indexTemplate(moduleName), `${path}/index.js`);
+	createFile(constantsTemplate(moduleName), `${path}/constants/${moduleName}Constants.js`);
+	createFile(actionTemplate(moduleName), `${path}/actions/${moduleName}Actions.js`);
+	createFile(reducerTemplate(moduleName), `${path}/reducers/${moduleName}Reducer.js`);
+	createFile(containerTemplate(moduleName), `${path}/containers/${moduleName}.js`);
 };
 
 export default handle;
