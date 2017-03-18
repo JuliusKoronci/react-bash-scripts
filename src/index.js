@@ -1,6 +1,6 @@
 #!/usr/bin/env node --harmony
 // @flow
-require("babel-polyfill");
+import "babel-polyfill";
 
 import program from 'commander';
 import co from 'co';
