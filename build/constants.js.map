@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/constants.js"],"names":["types","MODULE","COMPONENT"],"mappings":";;;;;kBAAe;AACdA,QAAO;AACNC,UAAQ,QADF;AAENC,aAAW;AAFL;AADO,C","file":"constants.js","sourcesContent":["export default {\n\ttypes: {\n\t\tMODULE: 'module',\n\t\tCOMPONENT: 'component'\n\t}\n}\n"]}

@@ -3,9 +3,11 @@
   "version": "0.0.8",
   "description": "Some scripts to generate comon react module structure with stndard files, e.g. actions, reducers, constants...",
   "repository": "https://github.com/JuliusKoronci/react-bash-scripts",
+  "main": "./build/index.js",
   "scripts": {
     "gitCommit": "git add . && git commit -m'auto commit npm publish/version update script' --allow-empty",
     "gitPush": "git push",
+    "babelCompile": "babel src --out-dir build --source-maps",
     "minorVersion": "npm version patch",
     "build": "npm run gitCommit &&  npm run minorVersion"
   },
@@ -18,5 +20,26 @@
     "ReactJs"
   ],
   "author": "Julius Koronci <jk@web-solutions.sk>",
-  "license": "MIT"
+  "license": "MIT",
+  "bin": {
+    "react-cli": "./build/index.js"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "chalk": "^1.1.3",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^2.9.0",
+    "figlet": "^1.2.0",
+    "flow-bin": "^0.39.0",
+    "fs": "^0.0.1-security",
+    "keymirror": "^0.1.1",
+    "ramda": "0.23.x",
+    "shelljs": "^0.7.7"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-polyfill": "^6.23.0"
+  }
 }
