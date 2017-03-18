@@ -1,6 +1,6 @@
 {
   "name": "react-bash-helpers",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Some scripts to generate comon react module structure with stndard files, e.g. actions, reducers, constants...",
   "repository": "https://github.com/JuliusKoronci/react-bash-scripts",
   "scripts": {

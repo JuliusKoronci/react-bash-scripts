@@ -24,7 +24,7 @@ mkdir -m 777 -p ${basePath}/__test__
 echo -e "${green}Folder ${basePath}/__test__ ${black}created"
 
 cat <<EOT >> $basePath/index.js
-export default from './${ModuleName}.js';
+export default from './${ModuleName}';
 EOT
 
 cat <<EOT >> $basePath/${ModuleName}.js
