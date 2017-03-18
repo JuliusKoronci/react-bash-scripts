@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="763070c8-c1dc-4112-9256-6fd247c8934b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/reducerTemplate.js" afterPath="$PROJECT_DIR$/src/templates/reducerTemplate.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,7 +24,7 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255">
+            <state relative-caret-position="45">
               <caret line="3" column="157" lean-forward="false" selection-start-line="3" selection-start-column="157" selection-end-line="3" selection-end-column="157" />
               <folding />
             </state>
@@ -35,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="403">
+              <first_editor relative-caret-position="5865">
                 <caret line="391" column="34" lean-forward="false" selection-start-line="391" selection-start-column="34" selection-end-line="391" selection-end-column="34" />
                 <folding />
               </first_editor>
@@ -76,11 +76,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reducerTemplate.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/templates/reducerTemplate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -125,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/templates/componentTest.js" />
         <option value="$PROJECT_DIR$/src/templates/classTemplate.js" />
         <option value="$PROJECT_DIR$/src/templates/dumpTemplate.js" />
-        <option value="$PROJECT_DIR$/src/templates/reducerTemplate.js" />
         <option value="$PROJECT_DIR$/src/templates/constantsTemplate.js" />
         <option value="$PROJECT_DIR$/src/templates/actionTemplate.js" />
         <option value="$PROJECT_DIR$/src/templates/snapshotTest.js" />
@@ -137,6 +146,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/templates/reducerTemplate.js" />
       </list>
     </option>
   </component>
@@ -178,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -244,6 +253,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -365,12 +375,13 @@
       <workItem from="1489578495168" duration="1742000" />
       <workItem from="1489580683679" duration="63000" />
       <workItem from="1489800184764" duration="25905000" />
-      <workItem from="1489838747449" duration="157000" />
+      <workItem from="1489838747449" duration="524000" />
+      <workItem from="1489880701905" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30733000" />
+    <option name="totallyTimeSpent" value="31113000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
@@ -487,13 +498,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Test/index.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Test/Test.js" />
-    <entry file="file://$PROJECT_DIR$/src/templates/reducerTemplate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/actionTemplate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -613,7 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
+        <state relative-caret-position="45">
           <caret line="3" column="157" lean-forward="false" selection-start-line="3" selection-start-column="157" selection-end-line="3" selection-end-column="157" />
           <folding />
         </state>
@@ -622,7 +626,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="403">
+          <first_editor relative-caret-position="5865">
             <caret line="391" column="34" lean-forward="false" selection-start-line="391" selection-start-column="34" selection-end-line="391" selection-end-column="34" />
             <folding />
           </first_editor>
@@ -634,6 +638,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/reducerTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding />
         </state>
       </provider>

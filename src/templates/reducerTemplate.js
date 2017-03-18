@@ -17,7 +17,7 @@ const _success = {
 	},
 };
 const _error = {
-	next(state) {
+	throw(state) {
 		return updeep(
 			{
 				isFetching: false,
