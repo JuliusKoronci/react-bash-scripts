@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="763070c8-c1dc-4112-9256-6fd247c8934b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/defaultRouteConfigTemplate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/createRouteConfig.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Button/Button.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Button/__tests__/ButtonSnapshotTest.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Button/__tests__/ButtonTest.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Button/__tests__/__snapshots__/ButtonSnapshotTest.js.snap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Button/index.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/component/createComponent.js" afterPath="$PROJECT_DIR$/build/component/createComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/component/createComponent.js.map" afterPath="$PROJECT_DIR$/build/component/createComponent.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.js" afterPath="$PROJECT_DIR$/build/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.js.map" afterPath="$PROJECT_DIR$/build/index.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/module/createModule.js" afterPath="$PROJECT_DIR$/build/module/createModule.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/module/createModule.js.map" afterPath="$PROJECT_DIR$/build/module/createModule.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/route/createRoute.js" afterPath="$PROJECT_DIR$/build/route/createRoute.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/route/createRoute.js.map" afterPath="$PROJECT_DIR$/build/route/createRoute.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/templates/reducerTemplate.js" afterPath="$PROJECT_DIR$/build/templates/reducerTemplate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/templates/reducerTemplate.js.map" afterPath="$PROJECT_DIR$/build/templates/reducerTemplate.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/createComponent.js" afterPath="$PROJECT_DIR$/src/component/createComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/module/createModule.js" afterPath="$PROJECT_DIR$/src/module/createModule.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/route/createRoute.js" afterPath="$PROJECT_DIR$/src/route/createRoute.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/reducerTemplate.js" afterPath="$PROJECT_DIR$/src/templates/reducerTemplate.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,25 +43,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="reducerTemplate.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/templates/reducerTemplate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="157" lean-forward="false" selection-start-line="3" selection-start-column="157" selection-end-line="3" selection-end-column="157" />
+            <state relative-caret-position="225">
+              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="5865">
-                <caret line="391" column="34" lean-forward="false" selection-start-line="391" selection-start-column="34" selection-end-line="391" selection-end-column="34" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -48,49 +57,17 @@
         <entry file="file://$PROJECT_DIR$/src/component/createComponent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dumpTemplate.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/dumpTemplate.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="27" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Button.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Button/Button.js">
+      <file leaf-file-name="actionTemplate.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/actionTemplate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reducerTemplate.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/templates/reducerTemplate.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -130,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/templates/index.js" />
         <option value="$PROJECT_DIR$/src/utils/createFile.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/route/createRoute.js" />
         <option value="$PROJECT_DIR$/src/templates/indexComponent.js" />
         <option value="$PROJECT_DIR$/src/templates/componentTest.js" />
         <option value="$PROJECT_DIR$/src/templates/classTemplate.js" />
@@ -139,13 +115,16 @@
         <option value="$PROJECT_DIR$/src/templates/actionTemplate.js" />
         <option value="$PROJECT_DIR$/src/templates/snapshotTest.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
-        <option value="$PROJECT_DIR$/src/module/createModule.js" />
         <option value="$PROJECT_DIR$/src/templates/containerTemplate.js" />
-        <option value="$PROJECT_DIR$/src/constants.js" />
-        <option value="$PROJECT_DIR$/src/component/createComponent.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/constants.js" />
+        <option value="$PROJECT_DIR$/src/component/createComponent.js" />
+        <option value="$PROJECT_DIR$/src/module/createModule.js" />
+        <option value="$PROJECT_DIR$/src/utils/createRouteConfig.js" />
+        <option value="$PROJECT_DIR$/src/templates/defaultRouteTemplate.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/route/createRoute.js" />
         <option value="$PROJECT_DIR$/src/templates/reducerTemplate.js" />
       </list>
     </option>
@@ -166,9 +145,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="1678" />
+    <option name="y" value="48" />
+    <option name="width" value="1440" />
+    <option name="height" value="873" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -188,6 +168,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,7 +234,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,11 +241,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="js.eslint.eslintPackage" value="" />
+    <property name="js.eslint.eslintPackage" value="/usr/local/lib/node_modules/eslint" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -376,25 +355,32 @@
       <workItem from="1489580683679" duration="63000" />
       <workItem from="1489800184764" duration="25905000" />
       <workItem from="1489838747449" duration="524000" />
-      <workItem from="1489880701905" duration="13000" />
+      <workItem from="1489880701905" duration="5269000" />
+      <workItem from="1489947333658" duration="945000" />
+      <workItem from="1489998402459" duration="294000" />
+      <workItem from="1490000091074" duration="17000" />
+      <workItem from="1490000207236" duration="11000" />
+      <workItem from="1490017560422" duration="182000" />
+      <workItem from="1490103169870" duration="810000" />
+      <workItem from="1490275463692" duration="4000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31113000" />
+    <option name="totallyTimeSpent" value="38632000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="1678" y="48" width="1440" height="873" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1864139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18604651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43267328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45198464" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -419,28 +405,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
-            <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module.sh" />
-    <entry file="file://$PROJECT_DIR$/src/components/atoms/Test/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/molecules/Test/Test.test.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/molecules/Test/__test__/Test.test.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/co-prompt/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80">
@@ -470,14 +434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/route/createRoute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -489,22 +445,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/createFile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Test/index.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Test/Test.js" />
-    <entry file="file://$PROJECT_DIR$/src/templates/actionTemplate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/constantsTemplate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -552,74 +494,20 @@
     <entry file="file://$PROJECT_DIR$/module.sh" />
     <entry file="file://$PROJECT_DIR$/src/modules/Button/actions/ButtonAction.js" />
     <entry file="file://$PROJECT_DIR$/src/modules/Button/constants/ButtonConstant.js" />
-    <entry file="file://$PROJECT_DIR$/src/module/createModule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="31" column="87" lean-forward="false" selection-start-line="31" selection-start-column="87" selection-end-line="31" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/Button/containers/Button.js" />
-    <entry file="file://$PROJECT_DIR$/src/templates/containerTemplate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/Button/reducers/ButtonReducer.js" />
     <entry file="file://$PROJECT_DIR$/src/components/organisms/Button/__tests__/__snapshots__/ButtonSnapshotTest.js.snap" />
     <entry file="file://$PROJECT_DIR$/src/components/organisms/Button/__tests__/ButtonSnapshotTest.js" />
     <entry file="file://$PROJECT_DIR$/src/components/organisms/Button/__tests__/ButtonTest.js" />
     <entry file="file://$PROJECT_DIR$/src/components/organisms/Button/Button.js" />
     <entry file="file://$PROJECT_DIR$/src/components/organisms/Button/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/atomic.sh" />
-    <entry file="file://$PROJECT_DIR$/src/components/Button/__tests__/ButtonTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Button/Button.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Button/__tests__/ButtonTest.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/Button/Button.js" />
     <entry file="file://$PROJECT_DIR$/src/templates/dumpTemplate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/createComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="157" lean-forward="false" selection-start-line="3" selection-start-column="157" selection-end-line="3" selection-end-column="157" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -628,24 +516,104 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="5865">
             <caret line="391" column="34" lean-forward="false" selection-start-line="391" selection-start-column="34" selection-end-line="391" selection-end-column="34" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/is-empty/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-742">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/createFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/createRouteConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/containerTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/defaultRouteConfigTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/route/createRoute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="17" column="28" lean-forward="false" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="102" column="4" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="104" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/Danka/reducers/DankaReducer.js" />
+    <entry file="file://$PROJECT_DIR$/src/modules/Danka/containers/Danka.js" />
+    <entry file="file://$PROJECT_DIR$/src/modules/Pavel/constants/PavelConstants.js" />
+    <entry file="file://$PROJECT_DIR$/src/module/createModule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="32" column="83" lean-forward="false" selection-start-line="32" selection-start-column="83" selection-end-line="32" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/createComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/actionTemplate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/reducerTemplate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="225">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding />
         </state>
       </provider>

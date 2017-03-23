@@ -41,8 +41,8 @@ program
 	.option('-a, --atom      [atom]', 'name of your Atom')
 	.option('-m, --molecule  [molecule]', 'name of your Molecule')
 	.option('-o, --organism  [organism]', 'name of your Organism')
-	.option('-d, --dumb  [organism]', 'name of your dumb component')
-	.option('-r, --route     [route]', 'url of your route')
+	.option('-d, --dumb      [organism]', 'name of your dumb component')
+	.option('-r, --route     [route name]', 'url of your route')
 	.option('-p, --path      [path]', 'path for the generated structure [module|component]')
 	.parse(process.argv);
 
@@ -66,9 +66,15 @@ const parseValues = co(function *() {
 			process.exit(0);
 		}
 		if (!config[constants.types.PATH]) {
-			config[constants.types.PATH] = yield prompt(`Optional path, we recommend to leave blank(will default to /src/[modules|components]):`);
+			config[constants.types.PATH] = yield prompt(chalk.bold.cyan(`Optional path, we recommend to leave blank(will default to /src/[modules|components]):`));
 		}
 	}
+
+	if (config[constants.types.ROUTE] && '' !== config[constants.types.ROUTE]) {
+		config['routeType'] = yield prompt(chalk.bold.cyan(`Do you want to add a public or secure route? Options [p|s], defaults to p - public route:`));
+		config['routePath'] = yield prompt(chalk.bold.cyan(`Enter the URL path of your route, e.g. /contact (firewall path will be automatically prepended):`));
+	}
+
 	return config;
 }).catch((error) => {
 	console.log(chalk.bold.red(error.message));
@@ -81,7 +87,7 @@ parseValues.then((values) => handleValues(values))
 		process.exit(0);
 	});
 
-const handleValues = ({ component, path, module, atom, molecule, organism, dumb, route }) => {
+const handleValues = ({ component, path, module, atom, molecule, organism, dumb, route, ...args }) => {
 
 	module && createModule(module, path);
 	component && createComponent(component, path);
@@ -89,7 +95,10 @@ const handleValues = ({ component, path, module, atom, molecule, organism, dumb,
 	molecule && createComponent(molecule, path, 'molecules');
 	atom && createComponent(atom, path, 'atoms');
 	organism && createComponent(organism, path, 'organisms');
-	route && createRoute(route);
+	if (route) {
+		const { routeType, routePath } = args;
+		createRoute(route, routeType, routePath);
+	}
 
 	if (shell.exec('npm run test').code !== 0) {
 		shell.echo('Can not run tests. Please run tests manually!');

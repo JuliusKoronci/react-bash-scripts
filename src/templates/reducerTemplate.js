@@ -2,7 +2,7 @@ const getTemplate = (name) => {
 	const nameLower = name.toLowerCase();
 	const nameUpper = name.toUpperCase();
 	return (`// @flow
-import { ${name}Actions } from '../constants/${name}Constants';
+import { ${nameLower}Actions } from '../constants/${name}Constants';
 import { handleActions } from 'redux-actions';
 import updeep from 'updeep';
 
@@ -13,6 +13,7 @@ const _success = {
 				isFetching: false,
 				error     : false,
 				loaded    : true,
+				${name}   : action.payload
 			}, state);
 	},
 };
@@ -32,6 +33,7 @@ const _request = {
 			{
 				isFetching : true,
 				error      : false,
+				loaded     : false,
 			}, state);
 	},
 };
@@ -45,6 +47,8 @@ const ${nameLower}Reducer = {
 export default handleActions(${nameLower}Reducer, {
 	isFetching : false,
 	error      : false,
+	loaded     : false,
+	${name}    : {},
 });
 
 `

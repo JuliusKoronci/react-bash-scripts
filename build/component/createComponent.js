@@ -8,6 +8,10 @@ var _shelljs = require('shelljs');
 
 var _shelljs2 = _interopRequireDefault(_shelljs);
 
+var _isEmpty = require('is-empty');
+
+var _isEmpty2 = _interopRequireDefault(_isEmpty);
+
 var _createFile = require('../utils/createFile');
 
 var _createFile2 = _interopRequireDefault(_createFile);
@@ -40,10 +44,10 @@ var handle = function handle(moduleName, path) {
 	var subDir = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
 	var dumb = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
 
-	if (!path || '' === path) {
+	if ((0, _isEmpty2.default)(path)) {
 		path = 'src/components';
 	}
-	if (subDir && '' !== subDir) {
+	if (!(0, _isEmpty2.default)(subDir)) {
 		path += '/' + subDir;
 	}
 

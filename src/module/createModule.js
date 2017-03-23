@@ -1,4 +1,5 @@
 import shell from 'shelljs';
+import isEmpty from 'is-empty';
 import indexTemplate from '../templates/indexModule';
 import actionTemplate from '../templates/actionTemplate';
 import constantsTemplate from '../templates/constantsTemplate';
@@ -19,7 +20,7 @@ const dirs = [
 ];
 
 const handle = (moduleName, path) => {
-	if (!path || '' === path) {
+	if (isEmpty(path)) {
 		path = 'src/modules';
 	}
 	path += `/${moduleName}`;

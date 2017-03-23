@@ -1,4 +1,5 @@
 import shell from 'shelljs';
+import isEmpty from 'is-empty';
 import createFile from '../utils/createFile';
 import indexTemplate from '../templates/indexComponent';
 import classTemplate from '../templates/classTemplate';
@@ -11,10 +12,10 @@ const dirs = [
 ];
 
 const handle = (moduleName, path, subDir = undefined, dumb = false) => {
-	if (!path || '' === path) {
+	if (isEmpty(path)) {
 		path = 'src/components';
 	}
-	if (subDir && '' !== subDir) {
+	if (!isEmpty(subDir)) {
 		path += `/${subDir}`;
 	}
 

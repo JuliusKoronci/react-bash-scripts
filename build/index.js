@@ -1,6 +1,8 @@
 #!/usr/bin/env node --harmony
 'use strict';
 
+require('babel-polyfill');
+
 var _commander = require('commander');
 
 var _commander2 = _interopRequireDefault(_commander);
@@ -43,7 +45,7 @@ var _constants2 = _interopRequireDefault(_constants);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-require("babel-polyfill");
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 // local libs
 
@@ -53,7 +55,7 @@ console.log(_chalk2.default.green(_figlet2.default.textSync('ReactJS CLI')));
 
 var pjson = require('../package.json');
 
-_commander2.default.version(pjson.version).usage('with or without arguments :)').option('-l, --module    [module]', 'name of your Module').option('-c, --component [component]', 'name of your Component').option('-a, --atom      [atom]', 'name of your Atom').option('-m, --molecule  [molecule]', 'name of your Molecule').option('-o, --organism  [organism]', 'name of your Organism').option('-d, --dumb  [organism]', 'name of your dumb component').option('-r, --route     [route]', 'url of your route').option('-p, --path      [path]', 'path for the generated structure [module|component]').parse(process.argv);
+_commander2.default.version(pjson.version).usage('with or without arguments :)').option('-l, --module    [module]', 'name of your Module').option('-c, --component [component]', 'name of your Component').option('-a, --atom      [atom]', 'name of your Atom').option('-m, --molecule  [molecule]', 'name of your Molecule').option('-o, --organism  [organism]', 'name of your Organism').option('-d, --dumb      [organism]', 'name of your dumb component').option('-r, --route     [route name]', 'url of your route').option('-p, --path      [path]', 'path for the generated structure [module|component]').parse(process.argv);
 
 var parseValues = (0, _co2.default)(regeneratorRuntime.mark(function _callee() {
 	var config, counter;
@@ -94,15 +96,32 @@ var parseValues = (0, _co2.default)(regeneratorRuntime.mark(function _callee() {
 					}
 
 					_context.next = 11;
-					return (0, _coPrompt2.default)('Optional path, we recommend to leave blank(will default to /src/[modules|components]):');
+					return (0, _coPrompt2.default)(_chalk2.default.bold.cyan('Optional path, we recommend to leave blank(will default to /src/[modules|components]):'));
 
 				case 11:
 					config[_constants2.default.types.PATH] = _context.sent;
 
 				case 12:
+					if (!(config[_constants2.default.types.ROUTE] && '' !== config[_constants2.default.types.ROUTE])) {
+						_context.next = 19;
+						break;
+					}
+
+					_context.next = 15;
+					return (0, _coPrompt2.default)(_chalk2.default.bold.cyan('Do you want to add a public or secure route? Options [p|s], defaults to p - public route:'));
+
+				case 15:
+					config['routeType'] = _context.sent;
+					_context.next = 18;
+					return (0, _coPrompt2.default)(_chalk2.default.bold.cyan('Enter the URL path of your route, e.g. /contact (firewall path will be automatically prepended):'));
+
+				case 18:
+					config['routePath'] = _context.sent;
+
+				case 19:
 					return _context.abrupt('return', config);
 
-				case 13:
+				case 20:
 				case 'end':
 					return _context.stop();
 			}
@@ -128,8 +147,8 @@ var handleValues = function handleValues(_ref) {
 	    molecule = _ref.molecule,
 	    organism = _ref.organism,
 	    dumb = _ref.dumb,
-	    route = _ref.route;
-
+	    route = _ref.route,
+	    args = _objectWithoutProperties(_ref, ['component', 'path', 'module', 'atom', 'molecule', 'organism', 'dumb', 'route']);
 
 	module && (0, _createModule2.default)(module, path);
 	component && (0, _createComponent2.default)(component, path);
@@ -137,7 +156,12 @@ var handleValues = function handleValues(_ref) {
 	molecule && (0, _createComponent2.default)(molecule, path, 'molecules');
 	atom && (0, _createComponent2.default)(atom, path, 'atoms');
 	organism && (0, _createComponent2.default)(organism, path, 'organisms');
-	route && (0, _createRoute2.default)(route);
+	if (route) {
+		var routeType = args.routeType,
+		    routePath = args.routePath;
+
+		(0, _createRoute2.default)(route, routeType, routePath);
+	}
 
 	if (_shelljs2.default.exec('npm run test').code !== 0) {
 		_shelljs2.default.echo('Can not run tests. Please run tests manually!');

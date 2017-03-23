@@ -8,6 +8,10 @@ var _shelljs = require('shelljs');
 
 var _shelljs2 = _interopRequireDefault(_shelljs);
 
+var _isEmpty = require('is-empty');
+
+var _isEmpty2 = _interopRequireDefault(_isEmpty);
+
 var _indexModule = require('../templates/indexModule');
 
 var _indexModule2 = _interopRequireDefault(_indexModule);
@@ -37,7 +41,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var dirs = ['/components', '/constants', '/containers', '/containers/__tests__', '/reducers', '/reducers/__tests__', '/actions', '/actions/__tests__', '/selectors'];
 
 var handle = function handle(moduleName, path) {
-	if (!path || '' === path) {
+	if ((0, _isEmpty2.default)(path)) {
 		path = 'src/modules';
 	}
 	path += '/' + moduleName;
