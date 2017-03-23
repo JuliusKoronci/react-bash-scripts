@@ -32,6 +32,10 @@ var _containerTemplate = require('../templates/containerTemplate');
 
 var _containerTemplate2 = _interopRequireDefault(_containerTemplate);
 
+var _createComponent = require('../component/createComponent');
+
+var _createComponent2 = _interopRequireDefault(_createComponent);
+
 var _createFile = require('../utils/createFile');
 
 var _createFile2 = _interopRequireDefault(_createFile);
@@ -55,6 +59,7 @@ var handle = function handle(moduleName, path) {
 	(0, _createFile2.default)((0, _actionTemplate2.default)(moduleName), path + '/actions/' + moduleName + 'Actions.js');
 	(0, _createFile2.default)((0, _reducerTemplate2.default)(moduleName), path + '/reducers/' + moduleName + 'Reducer.js');
 	(0, _createFile2.default)((0, _containerTemplate2.default)(moduleName), path + '/containers/' + moduleName + '.js');
+	(0, _createComponent2.default)(moduleName + 'View', path + '/components');
 };
 
 exports.default = handle;

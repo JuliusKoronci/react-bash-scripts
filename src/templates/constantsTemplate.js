@@ -8,6 +8,7 @@ import keyMirror from 'keymirror';
 const ${nameLower}Actions = keyMirror({
 	${nameUpper}_REQUEST: null,
 	${nameUpper}_SUCCESS: null,
+	${nameUpper}_SUCCESS_LOADMORE: null,
 	${nameUpper}_ERROR: null,
 });
 

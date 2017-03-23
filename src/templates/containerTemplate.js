@@ -3,23 +3,23 @@ const getTemplate = (name) => {
 import React, { PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import ${name}View from '../components/${name}View';
+import { load${name}, load${name}Error } from '../actions/${name}Actions';
 
 class ${name} extends Component {
   static defaultProps = {};
   static propTypes = {};
 
-  state = {};
-
   render() {
-    return(<div>${name}</div>);
+    return(<${name}View />);
   }
 }
 
 function _mapStoreToProps(state, ownProps) {
-    return {state};
+    return {${name}: state.${name}};
 }
 function _mapDispatchToProps(dispatch) {
-    return bindActionCreators({}, dispatch);
+    return bindActionCreators({ load${name}, load${name}Error }, dispatch);
 }
 
 export default connect(_mapStoreToProps, _mapDispatchToProps)(${name});

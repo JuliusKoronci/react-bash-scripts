@@ -5,6 +5,7 @@ import actionTemplate from '../templates/actionTemplate';
 import constantsTemplate from '../templates/constantsTemplate';
 import reducerTemplate from '../templates/reducerTemplate';
 import containerTemplate from '../templates/containerTemplate';
+import createComponent from '../component/createComponent';
 import createFile from '../utils/createFile';
 
 const dirs = [
@@ -34,6 +35,7 @@ const handle = (moduleName, path) => {
 	createFile(actionTemplate(moduleName), `${path}/actions/${moduleName}Actions.js`);
 	createFile(reducerTemplate(moduleName), `${path}/reducers/${moduleName}Reducer.js`);
 	createFile(containerTemplate(moduleName), `${path}/containers/${moduleName}.js`);
+	createComponent(`${moduleName}View`,`${path}/components`)
 };
 
 export default handle;
