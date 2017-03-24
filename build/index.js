@@ -163,7 +163,7 @@ var handleValues = function handleValues(_ref) {
 		(0, _createRoute2.default)(route, routeType, routePath);
 	}
 
-	if (_shelljs2.default.exec('npm run test').code !== 0) {
+	if (_shelljs2.default.exec('npm run test:js').code !== 0) {
 		_shelljs2.default.echo('Can not run tests. Please run tests manually!');
 	}
 
