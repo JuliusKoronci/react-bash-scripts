@@ -1,13 +1,14 @@
 const getTemplate = (name) => {
 	return (`import React from 'react';
 import ${name} from '../${name}';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <${name} />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+const wrapper = shallow(<${name} />);
+describe('(Component) ${name}', () => {
+	it('Should match snapshot', () => {
+		expect(toJson(wrapper)).toMatchSnapshot();
+	});
 });
 
 `
