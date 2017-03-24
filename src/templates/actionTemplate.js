@@ -29,7 +29,7 @@ export const loadMore${name} = (id, page) => getData({
 
 export const load${name}Error = () => {
 	return {
-		type: partnerclaimsActions.${nameToUpper}_ERROR
+		type: ${nameToLower}Actions.${nameToUpper}_ERROR
 	}
 };
 `
