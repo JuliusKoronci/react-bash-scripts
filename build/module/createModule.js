@@ -32,9 +32,19 @@ var _containerTemplate = require('../templates/containerTemplate');
 
 var _containerTemplate2 = _interopRequireDefault(_containerTemplate);
 
+<<<<<<< HEAD
 var _createComponent = require('../component/createComponent');
 
 var _createComponent2 = _interopRequireDefault(_createComponent);
+=======
+var _actionTest = require('../templates/actionTest');
+
+var _actionTest2 = _interopRequireDefault(_actionTest);
+
+var _snapshotTest = require('../templates/snapshotTest');
+
+var _snapshotTest2 = _interopRequireDefault(_snapshotTest);
+>>>>>>> npm/cli
 
 var _createFile = require('../utils/createFile');
 
@@ -57,9 +67,14 @@ var handle = function handle(moduleName, path) {
 	(0, _createFile2.default)((0, _indexModule2.default)(moduleName), path + '/index.js');
 	(0, _createFile2.default)((0, _constantsTemplate2.default)(moduleName), path + '/constants/' + moduleName + 'Constants.js');
 	(0, _createFile2.default)((0, _actionTemplate2.default)(moduleName), path + '/actions/' + moduleName + 'Actions.js');
+	(0, _createFile2.default)((0, _actionTest2.default)(moduleName), path + '/actions/__tests__/' + moduleName + 'ActionsTest.js');
 	(0, _createFile2.default)((0, _reducerTemplate2.default)(moduleName), path + '/reducers/' + moduleName + 'Reducer.js');
 	(0, _createFile2.default)((0, _containerTemplate2.default)(moduleName), path + '/containers/' + moduleName + '.js');
+<<<<<<< HEAD
 	(0, _createComponent2.default)(moduleName + 'View', path + '/components');
+=======
+	(0, _createFile2.default)((0, _snapshotTest2.default)(moduleName), path + '/containers/__tests__/' + moduleName + 'SnapshotTest.js');
+>>>>>>> npm/cli
 };
 
 exports.default = handle;
