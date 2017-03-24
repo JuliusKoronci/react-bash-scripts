@@ -1,10 +1,10 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 var getTemplate = function getTemplate(name) {
-  return "import React from 'react';\nimport " + name + " from '../" + name + "';\nimport renderer from 'react-test-renderer';\n\nit('renders correctly', () => {\n  const tree = renderer.create(\n    <" + name + " />\n  ).toJSON();\n  expect(tree).toMatchSnapshot();\n});\n\n";
+	return "import React from 'react';\nimport " + name + " from '../" + name + "';\nimport { shallow } from 'enzyme';\nimport toJson from 'enzyme-to-json';\n\nconst wrapper = shallow(<" + name + " />);\ndescribe('(Component) " + name + "', () => {\n\tit('Should match snapshot', () => {\n\t\texpect(toJson(wrapper)).toMatchSnapshot();\n\t});\n});\n\n";
 };
 
 exports.default = getTemplate;
