@@ -39,6 +39,10 @@ var _createRoute = require('./route/createRoute');
 
 var _createRoute2 = _interopRequireDefault(_createRoute);
 
+var _createReducerTest = require('./test/createReducerTest');
+
+var _createReducerTest2 = _interopRequireDefault(_createReducerTest);
+
 var _constants = require('./constants');
 
 var _constants2 = _interopRequireDefault(_constants);
@@ -50,12 +54,12 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 // local libs
 
 
-var types = [_constants2.default.types.MODULE, _constants2.default.types.COMPONENT, _constants2.default.types.ATOM, _constants2.default.types.MOLECULE, _constants2.default.types.ORGANISM, _constants2.default.types.DUMB, _constants2.default.types.ROUTE, _constants2.default.types.PATH];
+var types = [_constants2.default.types.MODULE, _constants2.default.types.COMPONENT, _constants2.default.types.ATOM, _constants2.default.types.MOLECULE, _constants2.default.types.ORGANISM, _constants2.default.types.DUMB, _constants2.default.types.ROUTE, _constants2.default.types.PATH, _constants2.default.types.TEST_REDUCER];
 console.log(_chalk2.default.green(_figlet2.default.textSync('ReactJS CLI')));
 
 var pjson = require('../package.json');
 
-_commander2.default.version(pjson.version).usage('with or without arguments :)').option('-l, --module    [module]', 'name of your Module').option('-c, --component [component]', 'name of your Component').option('-a, --atom      [atom]', 'name of your Atom').option('-m, --molecule  [molecule]', 'name of your Molecule').option('-o, --organism  [organism]', 'name of your Organism').option('-d, --dumb      [organism]', 'name of your dumb component').option('-r, --route     [route name]', 'url of your route').option('-p, --path      [path]', 'path for the generated structure [module|component]').parse(process.argv);
+_commander2.default.version(pjson.version).usage('with or without arguments :)').option('-l, --module    [module]', 'name of your Module').option('-c, --component [component]', 'name of your Component').option('-a, --atom      [atom]', 'name of your Atom').option('-m, --molecule  [molecule]', 'name of your Molecule').option('-o, --organism  [organism]', 'name of your Organism').option('-d, --dumb      [organism]', 'name of your dumb component').option('-r, --route     [route name]', 'url of your route').option('-p, --path      [path]', 'path for the generated structure [module|component]').option('-t, --rtest     [rtest]', 'name of reducer for test file e.g. User -> UserReducerTest').parse(process.argv);
 
 var parseValues = (0, _co2.default)(regeneratorRuntime.mark(function _callee() {
 	var config, counter;
@@ -148,7 +152,8 @@ var handleValues = function handleValues(_ref) {
 	    organism = _ref.organism,
 	    dumb = _ref.dumb,
 	    route = _ref.route,
-	    args = _objectWithoutProperties(_ref, ['component', 'path', 'module', 'atom', 'molecule', 'organism', 'dumb', 'route']);
+	    rtest = _ref.rtest,
+	    args = _objectWithoutProperties(_ref, ['component', 'path', 'module', 'atom', 'molecule', 'organism', 'dumb', 'route', 'rtest']);
 
 	module && (0, _createModule2.default)(module, path);
 	component && (0, _createComponent2.default)(component, path);
@@ -156,13 +161,14 @@ var handleValues = function handleValues(_ref) {
 	molecule && (0, _createComponent2.default)(molecule, path, 'molecules');
 	atom && (0, _createComponent2.default)(atom, path, 'atoms');
 	organism && (0, _createComponent2.default)(organism, path, 'organisms');
+	rtest && (0, _createReducerTest2.default)(rtest, path);
 	if (route) {
 		var routeType = args.routeType,
 		    routePath = args.routePath;
 
 		(0, _createRoute2.default)(route, routeType, routePath);
 	}
-
+	_chalk2.default.reset();
 	if (_shelljs2.default.exec('npm run test:js').code !== 0) {
 		_shelljs2.default.echo('Can not run tests. Please run tests manually!');
 	}

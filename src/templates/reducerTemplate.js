@@ -4,21 +4,29 @@ const getTemplate = (name) => {
 	return (`// @flow
 import { ${nameLower}Actions } from '../constants/${name}Constants';
 import { handleActions } from 'redux-actions';
+import { Logger } from 'gef-ui-logging';
+import { pkclListResponseValidate } from '../../../utils/responseValidator';
 import updeep from 'updeep';
 
 const _success = {
 	next(state, action) {
-		return updeep(
-			{
-				isFetching: false,
-				error     : false,
-				loaded    : true,
-				${name}   : action.payload,
-			}, state);
+		if (!pkclListResponseValidate('${nameLower}Reducer', action.payload)) {
+			return state;
+		}
+		return {
+			...state,
+			isFetching: false,
+			error     : false,
+			loaded    : true,
+			${name}   : action.payload,
+			};
 	},
 };
 const _loadMore = {
 	next(state, action) {
+		if (!pkclListResponseValidate('${nameLower}Reducer', action.payload)) {
+			return state;
+		}
 		const prevData = state.${name}.data;
 		return updeep(
 			{
@@ -36,7 +44,7 @@ const _loadMore = {
 	},
 };
 const _error = {
-	throw(state) {
+	next(state) {
 		return updeep(
 			{
 				isFetching: false,
@@ -63,7 +71,7 @@ const ${nameLower}Reducer = {
 	[${nameLower}Actions.${nameUpper}_SUCCESS_LOADMORE]: _loadMore,
 };
 
-export default handleActions(${nameLower}Reducer, {
+export const initialState = {
 	isFetching : false,
 	error      : false,
 	loaded     : false,
@@ -75,7 +83,9 @@ export default handleActions(${nameLower}Reducer, {
 			"moreRows": false,
 		},
 	},
-});
+};
+
+export default handleActions(${nameLower}Reducer, initialState);
 
 `
 	);

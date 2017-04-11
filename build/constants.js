@@ -12,7 +12,8 @@ exports.default = {
 		ORGANISM: 'organism',
 		DUMB: 'dumb',
 		ROUTE: 'route',
-		PATH: 'path'
+		PATH: 'path',
+		TEST_REDUCER: 'rtest'
 	}
 };
 //# sourceMappingURL=constants.js.map

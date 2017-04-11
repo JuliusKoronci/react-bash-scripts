@@ -40,9 +40,13 @@ var _actionTest = require('../templates/actionTest');
 
 var _actionTest2 = _interopRequireDefault(_actionTest);
 
-var _snapshotTest = require('../templates/snapshotTest');
+var _reducerTest = require('../templates/reducerTest');
 
-var _snapshotTest2 = _interopRequireDefault(_snapshotTest);
+var _reducerTest2 = _interopRequireDefault(_reducerTest);
+
+var _snapshotTestContainer = require('../templates/snapshotTestContainer');
+
+var _snapshotTestContainer2 = _interopRequireDefault(_snapshotTestContainer);
 
 var _createFile = require('../utils/createFile');
 
@@ -67,9 +71,10 @@ var handle = function handle(moduleName, path) {
 	(0, _createFile2.default)((0, _actionTemplate2.default)(moduleName), path + '/actions/' + moduleName + 'Actions.js');
 	(0, _createFile2.default)((0, _actionTest2.default)(moduleName), path + '/actions/__tests__/' + moduleName + 'ActionsTest.js');
 	(0, _createFile2.default)((0, _reducerTemplate2.default)(moduleName), path + '/reducers/' + moduleName + 'Reducer.js');
+	(0, _createFile2.default)((0, _reducerTest2.default)(moduleName), path + '/reducers/__tests__/' + moduleName + 'ReducerTest.js');
 	(0, _createFile2.default)((0, _containerTemplate2.default)(moduleName), path + '/containers/' + moduleName + '.js');
 	(0, _createComponent2.default)(moduleName + 'View', path + '/components');
-	(0, _createFile2.default)((0, _snapshotTest2.default)(moduleName), path + '/containers/__tests__/' + moduleName + 'SnapshotTest.js');
+	(0, _createFile2.default)((0, _snapshotTestContainer2.default)(moduleName), path + '/containers/__tests__/' + moduleName + 'SnapshotTest.js');
 };
 
 exports.default = handle;

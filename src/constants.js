@@ -8,5 +8,6 @@ export default {
 		DUMB: 'dumb',
 		ROUTE: 'route',
 		PATH: 'path',
+		TEST_REDUCER: 'rtest',
 	}
 }

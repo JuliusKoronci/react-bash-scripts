@@ -13,6 +13,7 @@ import shell from 'shelljs';
 import createModule from './module/createModule';
 import createComponent from './component/createComponent';
 import createRoute from './route/createRoute';
+import createReducerTest from './test/createReducerTest';
 import constants from './constants';
 
 const types = [
@@ -24,6 +25,7 @@ const types = [
 	constants.types.DUMB,
 	constants.types.ROUTE,
 	constants.types.PATH,
+	constants.types.TEST_REDUCER,
 ];
 console.log(
 	chalk.green(
@@ -44,6 +46,7 @@ program
 	.option('-d, --dumb      [organism]', 'name of your dumb component')
 	.option('-r, --route     [route name]', 'url of your route')
 	.option('-p, --path      [path]', 'path for the generated structure [module|component]')
+	.option('-t, --rtest     [rtest]', 'name of reducer for test file e.g. User -> UserReducerTest')
 	.parse(process.argv);
 
 
@@ -87,7 +90,7 @@ parseValues.then((values) => handleValues(values))
 		process.exit(0);
 	});
 
-const handleValues = ({ component, path, module, atom, molecule, organism, dumb, route, ...args }) => {
+const handleValues = ({ component, path, module, atom, molecule, organism, dumb, route, rtest, ...args }) => {
 
 	module && createModule(module, path);
 	component && createComponent(component, path);
@@ -95,11 +98,12 @@ const handleValues = ({ component, path, module, atom, molecule, organism, dumb,
 	molecule && createComponent(molecule, path, 'molecules');
 	atom && createComponent(atom, path, 'atoms');
 	organism && createComponent(organism, path, 'organisms');
+	rtest && createReducerTest(rtest, path);
 	if (route) {
 		const { routeType, routePath } = args;
 		createRoute(route, routeType, routePath);
 	}
-
+	chalk.reset();
 	if (shell.exec('npm run test:js').code !== 0) {
 		shell.echo('Can not run tests. Please run tests manually!');
 	}

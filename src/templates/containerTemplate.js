@@ -7,13 +7,13 @@ import ${name}View from '../components/${name}View';
 import ComponentLoader from '../../../components/molecules/ComponentLoader/ComponentLoader';
 import { load${name}, loadMore${name}, load${name}Error } from '../actions/${name}Actions';
 
-class ${name} extends Component {
+export class ${name} extends Component {
   static defaultProps = {};
   static propTypes = {
   	${name}Id: PropTypes.number.isRequired,
   };
   
-    componentWillMount() {
+    componentDidMount() {
 		this.load${name}(this.props.${name}Id);
 	}
 
