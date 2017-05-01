@@ -12,7 +12,6 @@ import shell from 'shelljs';
 // local libs
 import createModule from './module/createModule';
 import createComponent from './component/createComponent';
-import createRoute from './route/createRoute';
 import createReducerTest from './test/createReducerTest';
 import constants from './constants';
 
@@ -23,7 +22,6 @@ const types = [
 	constants.types.MOLECULE,
 	constants.types.ORGANISM,
 	constants.types.DUMB,
-	constants.types.ROUTE,
 	constants.types.PATH,
 	constants.types.TEST_REDUCER,
 ];
@@ -44,7 +42,6 @@ program
 	.option('-m, --molecule  [molecule]', 'name of your Molecule')
 	.option('-o, --organism  [organism]', 'name of your Organism')
 	.option('-d, --dumb      [organism]', 'name of your dumb component')
-	.option('-r, --route     [route name]', 'url of your route')
 	.option('-p, --path      [path]', 'path for the generated structure [module|component]')
 	.option('-t, --rtest     [rtest]', 'name of reducer for test file e.g. User -> UserReducerTest')
 	.parse(process.argv);
@@ -73,11 +70,6 @@ const parseValues = co(function *() {
 		}
 	}
 
-	if (config[constants.types.ROUTE] && '' !== config[constants.types.ROUTE]) {
-		config['routeType'] = yield prompt(chalk.bold.cyan(`Do you want to add a public or secure route? Options [p|s], defaults to p - public route:`));
-		config['routePath'] = yield prompt(chalk.bold.cyan(`Enter the URL path of your route, e.g. /contact (firewall path will be automatically prepended):`));
-	}
-
 	return config;
 }).catch((error) => {
 	console.log(chalk.bold.red(error.message));
@@ -90,7 +82,7 @@ parseValues.then((values) => handleValues(values))
 		process.exit(0);
 	});
 
-const handleValues = ({ component, path, module, atom, molecule, organism, dumb, route, rtest, ...args }) => {
+const handleValues = ({ component, path, module, atom, molecule, organism, dumb, rtest, ...args }) => {
 
 	module && createModule(module, path);
 	component && createComponent(component, path);
@@ -99,10 +91,6 @@ const handleValues = ({ component, path, module, atom, molecule, organism, dumb,
 	atom && createComponent(atom, path, 'atoms');
 	organism && createComponent(organism, path, 'organisms');
 	rtest && createReducerTest(rtest, path);
-	if (route) {
-		const { routeType, routePath } = args;
-		createRoute(route, routeType, routePath);
-	}
 	chalk.reset();
 	if (shell.exec('npm run test:js').code !== 0) {
 		shell.echo('Can not run tests. Please run tests manually!');

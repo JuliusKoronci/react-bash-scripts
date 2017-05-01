@@ -6,7 +6,6 @@ export default {
 		MOLECULE: 'molecule',
 		ORGANISM: 'organism',
 		DUMB: 'dumb',
-		ROUTE: 'route',
 		PATH: 'path',
 		TEST_REDUCER: 'rtest',
 	}

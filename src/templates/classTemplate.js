@@ -1,11 +1,10 @@
 const getTemplate = (name) => {
 	return (`// @flow
-import React, { PropTypes, Component} from 'react';
+import React, { Component} from 'react';
+import PropTypes from 'prop-types';
 
 class ${name} extends Component {
-  static defaultProps = {};
-  static propTypes = {};
-  
+
   state = {};
   
   render() {
@@ -13,6 +12,8 @@ class ${name} extends Component {
   }
 }
 
+${name}.defaultProps = {};
+${name}.propTypes = {};
  
 export default ${name};
 

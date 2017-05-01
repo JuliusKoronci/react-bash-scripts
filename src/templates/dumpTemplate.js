@@ -1,6 +1,7 @@
 const getTemplate = (name) => {
 	return (`// @flow
-import React, { PropTypes, Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const ${name} = () =>(
 <div>${name}</div>

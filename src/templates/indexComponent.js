@@ -1,6 +1,8 @@
 const getTemplate = (name) => {
 	return (
-		`export default from './${name}';`
+		`import ${name} from './${name}';
+export default ${name};
+		`
 	);
 };
 
