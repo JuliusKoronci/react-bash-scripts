@@ -40,6 +40,7 @@
     "react": "^15.4.2",
     "redux-actions": "^2.0.1",
     "shelljs": "^0.7.7",
+    "prop-types": "^15.5.8",
     "updeep": "^1.0.0"
   },
   "devDependencies": {
