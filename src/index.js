@@ -92,7 +92,7 @@ const handleValues = ({ component, path, module, atom, molecule, organism, dumb,
 	organism && createComponent(organism, path, 'organisms');
 	rtest && createReducerTest(rtest, path);
 	chalk.reset();
-	if (shell.exec('npm run test:js').code !== 0) {
+	if (shell.exec('npm run test').code !== 0) {
 		shell.echo('Can not run tests. Please run tests manually!');
 	}
 

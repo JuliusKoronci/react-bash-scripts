@@ -3,17 +3,16 @@ const getTemplate = (name) => {
 	const nameUpper = name.toUpperCase();
 
 	return (`// @flow
-import keyMirror from 'keymirror';
 
-const ${nameLower}Actions = keyMirror({
-	${nameUpper}_REQUEST: null,
-	${nameUpper}_SUCCESS: null,
-	${nameUpper}_SUCCESS_LOADMORE: null,
-	${nameUpper}_ERROR: null,
-});
+const ${nameLower}Actions = {
+	${nameUpper}_REQUEST: '${nameUpper}_REQUEST',
+	${nameUpper}_SUCCESS: '${nameUpper}_SUCCESS',
+	${nameUpper}_SUCCESS_LOADMORE: '${nameUpper}_SUCCESS_LOADMORE',
+	${nameUpper}_ERROR: '${nameUpper}_ERROR',
+};
 
 export { ${nameLower}Actions };
-export default { ${nameLower}Actions };
+export default ${nameLower}Actions;
 `
 	);
 };

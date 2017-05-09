@@ -73,7 +73,7 @@ var handle = function handle(moduleName, path) {
 	(0, _createFile2.default)((0, _reducerTemplate2.default)(moduleName), path + '/reducers/' + moduleName + 'Reducer.js');
 	(0, _createFile2.default)((0, _reducerTest2.default)(moduleName), path + '/reducers/__tests__/' + moduleName + 'ReducerTest.js');
 	(0, _createFile2.default)((0, _containerTemplate2.default)(moduleName), path + '/containers/' + moduleName + '.js');
-	(0, _createComponent2.default)(moduleName + 'View', path + '/components');
+	(0, _createComponent2.default)('' + moduleName, path + '/components');
 	(0, _createFile2.default)((0, _snapshotTestContainer2.default)(moduleName), path + '/containers/__tests__/' + moduleName + 'SnapshotTest.js');
 };
 

@@ -4,7 +4,7 @@ import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import ${name}View from '../components/${name}View';
+import ${name}View from '../components/${name}';
 import {} from '../actions/${name}Actions';
 
 export class ${name} extends Component {
@@ -12,7 +12,6 @@ export class ${name} extends Component {
   state = {};
   
   render() {
-		const { ${name} } = this.props;
 		return (
 			<${name}View />
 		);

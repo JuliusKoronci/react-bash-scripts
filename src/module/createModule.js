@@ -40,7 +40,7 @@ const handle = (moduleName, path) => {
 	createFile(reducerTemplate(moduleName), `${path}/reducers/${moduleName}Reducer.js`);
 	createFile(reducerTestTemplate(moduleName), `${path}/reducers/__tests__/${moduleName}ReducerTest.js`);
 	createFile(containerTemplate(moduleName), `${path}/containers/${moduleName}.js`);
-	createComponent(`${moduleName}View`, `${path}/components`);
+	createComponent(`${moduleName}`, `${path}/components`);
 	createFile(snapshotTestContainer(moduleName), `${path}/containers/__tests__/${moduleName}SnapshotTest.js`);
 };
 

@@ -141,7 +141,7 @@ var handleValues = function handleValues(_ref) {
 	organism && (0, _createComponent2.default)(organism, path, 'organisms');
 	rtest && (0, _createReducerTest2.default)(rtest, path);
 	_chalk2.default.reset();
-	if (_shelljs2.default.exec('npm run test:js').code !== 0) {
+	if (_shelljs2.default.exec('npm run test').code !== 0) {
 		_shelljs2.default.echo('Can not run tests. Please run tests manually!');
 	}
 

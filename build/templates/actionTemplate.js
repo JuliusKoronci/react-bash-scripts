@@ -7,7 +7,7 @@ var getTemplate = function getTemplate(name) {
 	var nameToLower = name.toLowerCase();
 	var nameToUpper = name.toUpperCase();
 
-	return "// @flow\nimport { createAction } from 'redux-actions';\n\nimport { " + nameToLower + "Actions } from '../constants/" + name + "Constants';\n";
+	return "// @flow\nimport { " + nameToLower + "Actions } from '../constants/" + name + "Constants';\n";
 };
 
 exports.default = getTemplate;
