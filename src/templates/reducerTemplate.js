@@ -4,7 +4,6 @@ const getTemplate = (name) => {
 	return (`// @flow
 import { ${nameLower}Actions } from '../constants/${name}Constants';
 import { handleActions } from 'redux-actions';
-import { Logger } from 'gef-ui-logging';
 import { pkclListResponseValidate } from '../../../utils/responseValidator';
 import updeep from 'updeep';
 
@@ -19,7 +18,7 @@ const _success = {
 			error     : false,
 			loaded    : true,
 			${name}   : action.payload,
-			};
+		};
 	},
 };
 const _loadMore = {
@@ -39,7 +38,7 @@ const _loadMore = {
 						...action.payload.data,
 					],
 					pageMetaData: action.payload.pageMetaData,
-				}
+				},
 			}, state);
 	},
 };
@@ -76,11 +75,11 @@ export const initialState = {
 	error      : false,
 	loaded     : false,
 	${name}    : {
-		"data": [],
-		"pageMetaData": {
-			"size": 1,
-			"page": 1,
-			"moreRows": false,
+		'data': [],
+		'pageMetaData': {
+			'size': 1,
+			'page': 1,
+			'moreRows': false,
 		},
 	},
 };
