@@ -8,10 +8,10 @@ import ${name}View from '../components/${name}';
 import {} from '../actions/${name}Actions';
 
 export class ${name} extends Component {
-  
-  state = {};
-  
-  render() {
+
+	state = {};
+
+	render() {
 		return (
 			<${name}View />
 		);

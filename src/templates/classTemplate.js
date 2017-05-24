@@ -5,16 +5,16 @@ import PropTypes from 'prop-types';
 
 class ${name} extends Component {
 
-  state = {};
-  
-  render() {
-    return(<div>${name}</div>);
-  }
+	state = {};
+ 
+	render() {
+		return(<div>${name}</div>);
+	}
 }
 
 ${name}.defaultProps = {};
 ${name}.propTypes = {};
- 
+
 export default ${name};
 
 `
