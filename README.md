@@ -40,6 +40,7 @@ Type react-cli --help
     -h, --help                   output usage information
     -V, --version                output the version number
     -l, --module    [module]     name of your Module
+    -q, --module    [module]     name of your Module with Ducks
     -c, --component [component]  name of your Component
     -a, --atom      [atom]       name of your Atom
     -m, --molecule  [molecule]   name of your Molecule
