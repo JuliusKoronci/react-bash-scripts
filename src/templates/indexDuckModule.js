@@ -1,7 +1,8 @@
+import { firstLetterToLower } from '../utils/firstToLower';
 const getTemplate = (name) => {
-	const lowerCaseName = name.toLowerCase();
+	const lowerCaseName = firstLetterToLower(name);
 	return (
-`import ${lowerCaseName}Reducer from './reducers/${name}Reducer';
+		`import ${lowerCaseName}Reducer from './ducks/${name}Duck';
 import ${name} from './containers/${name}';
 
 export { ${name} };

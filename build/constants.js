@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	types: {
 		MODULE: 'module',
+		DUCKS: 'duckule',
 		COMPONENT: 'component',
 		ATOM: 'atom',
 		MOLECULE: 'molecule',

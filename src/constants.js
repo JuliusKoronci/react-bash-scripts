@@ -1,6 +1,7 @@
 export default {
 	types: {
 		MODULE: 'module',
+		DUCKS: 'duckule',
 		COMPONENT: 'component',
 		ATOM: 'atom',
 		MOLECULE: 'molecule',

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ${name}View from '../components/${name}';
-import {} from '../actions/${name}Actions';
+import { actions } from '../ducks/${name}Duck';
 
 export class ${name} extends Component {
 
@@ -26,7 +26,9 @@ function _mapStoreToProps(state, ownProps) {
 	return {};
 }
 function _mapDispatchToProps(dispatch) {
-	return bindActionCreators({}, dispatch);
+	return bindActionCreators({
+		...actions,
+	}, dispatch);
 }
 
 export default connect(_mapStoreToProps, _mapDispatchToProps)(${name});
