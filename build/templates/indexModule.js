@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var getTemplate = function getTemplate(name) {
 	var lowerCaseName = name.toLowerCase();
-	return "import " + lowerCaseName + "Reducer from './reducers/" + name + "Reducer';\nimport " + name + " from './containers/" + name + "';\n\nexport { " + name + " };\nexport { " + lowerCaseName + "Reducer };\n";
+	return "import " + lowerCaseName + "Reducer from './reducers/" + name + "Reducer';\nimport " + name + " from './containers/" + name + "';\n\nexport { " + name + ", " + lowerCaseName + "Reducer };\n";
 };
 
 exports.default = getTemplate;

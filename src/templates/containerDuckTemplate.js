@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ${name}View from '../components/${name}';
-import { actions } from '../ducks/${name}Duck';
+import baseSelector from '../../../utils/baseSelector';
+import { actions, REDUCER_NAME } from '../ducks/${name}Duck';
 
 export class ${name} extends Component {
 
@@ -22,16 +23,20 @@ export class ${name} extends Component {
 ${name}.defaultProps = {};
 ${name}.propTypes = {};
 
-function _mapStoreToProps(state, ownProps) {
-	return {};
+function mapStoreToProps(state, ownProps) {
+	return {
+		// Loading the default reducer state into the container [partnerContactsAll]
+		// this should make life easier if reducer name changes --> cause one single place and constant
+		[REDUCER_NAME]: baseSelector.listByKey(state, REDUCER_NAME),
+	};
 }
-function _mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
 		...actions,
 	}, dispatch);
 }
 
-export default connect(_mapStoreToProps, _mapDispatchToProps)(${name});
+export default connect(mapStoreToProps, mapDispatchToProps)(${name});
 
 `);
 };

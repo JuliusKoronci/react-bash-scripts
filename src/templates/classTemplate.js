@@ -8,7 +8,7 @@ class ${name} extends Component {
 	state = {};
  
 	render() {
-		return(<div>${name}</div>);
+		return (<div>${name}</div>);
 	}
 }
 

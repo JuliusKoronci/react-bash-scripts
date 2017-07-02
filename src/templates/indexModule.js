@@ -4,8 +4,7 @@ const getTemplate = (name) => {
 `import ${lowerCaseName}Reducer from './reducers/${name}Reducer';
 import ${name} from './containers/${name}';
 
-export { ${name} };
-export { ${lowerCaseName}Reducer };
+export { ${name}, ${lowerCaseName}Reducer };
 `
 	);
 };

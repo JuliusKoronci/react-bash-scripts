@@ -22,14 +22,14 @@ export class ${name} extends Component {
 ${name}.defaultProps = {};
 ${name}.propTypes = {};
 
-function _mapStoreToProps(state, ownProps) {
+function mapStoreToProps(state, ownProps) {
 	return {};
 }
-function _mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
 	return bindActionCreators({}, dispatch);
 }
 
-export default connect(_mapStoreToProps, _mapDispatchToProps)(${name});
+export default connect(mapStoreToProps, mapDispatchToProps)(${name});
 
 `);
 };

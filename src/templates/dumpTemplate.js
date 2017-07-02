@@ -3,13 +3,15 @@ const getTemplate = (name) => {
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ${name} = () =>(
-<div>${name}</div>
-);
+const ${name} = () => {
+	return (
+		<div>${name}</div>
+	);
+};
 
 ${name}.defaultProps = {};
 ${name}.propTypes = {};
- 
+
 export default ${name};
 
 `
