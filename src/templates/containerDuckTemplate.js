@@ -9,7 +9,8 @@ import baseSelector from '../../../utils/baseSelector';
 import { actions, REDUCER_NAME } from '../ducks/${name}Duck';
 
 export class ${name} extends Component {
-
+	static defaultProps: Object;
+	
 	state = {};
 
 	render() {

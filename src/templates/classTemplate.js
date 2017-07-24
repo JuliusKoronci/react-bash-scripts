@@ -4,7 +4,8 @@ import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 
 class ${name} extends Component {
-
+	static defaultProps: Object;
+	
 	state = {};
  
 	render() {

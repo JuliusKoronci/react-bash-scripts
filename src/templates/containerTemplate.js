@@ -8,7 +8,9 @@ import ${name}View from '../components/${name}';
 import {} from '../actions/${name}Actions';
 
 export class ${name} extends Component {
-
+	static defaultProps: Object;
+	static propTypes: Object;
+	
 	state = {};
 
 	render() {
