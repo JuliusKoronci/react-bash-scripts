@@ -1,6 +1,6 @@
 {
   "name": "react-cli-tool",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Crossplatform Node CLI to generate and automate common tasks in react. Support module generateion, components, containers, reducers, test. Easily configurable to your own needs.",
   "repository": "https://github.com/JuliusKoronci/react-bash-scripts",
   "main": "./build/index.js",
